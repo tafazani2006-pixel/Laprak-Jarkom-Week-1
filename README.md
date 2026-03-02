@@ -28,3 +28,19 @@ Pada bagian Capture, terdapat grafik berupa "garis-garis" di sebelah kanan nama 
 **3. Packet Details Pane** bagiab ini menunjukkan rincian hierarki protokol dari satu paket yang dipilih pada bagian daftar. Setiap baris dapat diklik (tanda panah kecil) untuk melihat detail parameter di dalam setiap lapisan protokol tersebut.
 
 **4. Packet Bytes Pane** bagian kanan bawah ini menampilkan isi data paket dalam bentuk mentah (raw data). Data ditampilkan dalam format Heksadesimal (sebelah kiri) dan representasi ASCII (sebelah kanan).
+
+## Penggunaan Filter
+Untuk mempermudah pencarian data tertentu, digunakan fitur **Display Filter** yang terletak pada kolom hijau. Sebagai contoh, awalnya bukalah browser dan mengakses alamat situs berbasis HTTP (misalnya: http://gaia.cs.umass.edu/wireshark-labs/INTRO-wireshark-file1.html)
+
+<img width="792" height="117" alt="Screenshot 2026-03-02 161111" src="https://github.com/user-attachments/assets/8f205d43-9365-43b7-931e-588e7108e8bb" />
+
+Dengan mengetikkan **"http"** pada kolom filter, Wireshark hanya akan memunculkan paket yang relevan dengan protokol tersebut, sehingga kita bisa mencocokkan apakah aktivitas di browser tadi sudah terdeteksi atau jalan di Wireshark.
+
+<img width="954" height="188" alt="Screenshot 2026-03-02 161231" src="https://github.com/user-attachments/assets/0a8ebecf-8c4f-4b0b-b9d9-bf00b3bfeea0" />
+
+## Detail Paket
+Ketika salah satu paket dipilih, contohnya paket dengan info "HTTP/1.1 200 OK", Wireshark menampilkan rincian data di bagian bawah. 
+
+<img width="1198" height="611" alt="Screenshot 2026-03-02 162030" src="https://github.com/user-attachments/assets/c9615586-d757-42ea-939a-c96c84888b68" />
+
+Paket 200 OK menandakan bahwa permintaan (request) dari komputer berhasil diterima dan diproses oleh server dengan sukses. Pada bagian bawah (panel Packet Details), dapat terlihat struktur protokol dari lapisan fisik hingga aplikasi. Pada bagian Line-based text data, terlihat isi konten HTML yang dikirimkan oleh situs tersebut, yaitu teks: "Congratulations! You've downloaded the first Wireshark lab file!". Hal ini menunjukkan bagaimana data dari internet dipecah menjadi paket-paket sebelum akhirnya disusun kembali.
