@@ -10,6 +10,7 @@ Setelah proses unduhan selesai, dilakukan instalasi perangkat lunak Wireshark ve
 
 ## Tampilan Awal
 Setelah aplikasi dijalankan, Wireshark menampilkan daftar interface jaringan yang tersedia pada komputer.
+
 <img width="1128" height="317" alt="Screenshot 2026-03-02 160241" src="https://github.com/user-attachments/assets/9d45ef7c-e24d-4f3d-9de3-043f07c8e324" />
 Pada bagian Capture, terdapat grafik berupa "garis-garis" di sebelah kanan nama interface (seperti Wi-Fi). Garis ini merupakan penanda **kerja atau indikator adanya lalu lintas data** yang sedang berlangsung pada jalur tersebut. Apabila koneksi Wi-Fi dimatikan, grafik tersebut akan berubah menjadi garis lurus, yang menunjukkan bahwa tidak ada aktivitas data yang terdeteksi atau **interface dalam kondisi Non-Aktif**.
 <img width="969" height="419" alt="Screenshot 2026-03-02 160330" src="https://github.com/user-attachments/assets/116bcd2e-3e44-4608-9300-728c47f2443f" />
@@ -46,3 +47,6 @@ Ketika salah satu paket dipilih, contohnya paket dengan info "HTTP/1.1 200 OK", 
 <img width="1198" height="611" alt="Screenshot 2026-03-02 162030" src="https://github.com/user-attachments/assets/c9615586-d757-42ea-939a-c96c84888b68" />
 
 Paket 200 OK menandakan bahwa permintaan (request) dari komputer berhasil diterima dan diproses oleh server dengan sukses. Pada bagian bawah (panel Packet Details), dapat terlihat struktur protokol dari lapisan fisik hingga aplikasi. Pada bagian Line-based text data, terlihat isi konten HTML yang dikirimkan oleh situs tersebut, yaitu teks: "Congratulations! You've downloaded the first Wireshark lab file!". Hal ini menunjukkan bagaimana data dari internet dipecah menjadi paket-paket sebelum akhirnya disusun kembali.
+
+
+
