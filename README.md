@@ -16,7 +16,9 @@ Pada bagian Capture, terdapat grafik berupa "garis-garis" di sebelah kanan nama 
 
 # MODUL 2 : PENGENALAN TOOLS
 ## Fungsi Tools
-<img width="1365" height="604" alt="Screenshot 2026-03-02 160412" src="https://github.com/user-attachments/assets/ed58f212-6e77-40b1-938e-854dc88ec22a" />
+Membuka salah satu interface (contoh: wifi) lalu pilih "start capture" untuk melihat lebih dalam penggunaan tools di dalamnya.
+
+<img width="1364" height="604" alt="new" src="https://github.com/user-attachments/assets/5aa86caf-6b80-488c-8f26-4b60418792e8" />
 
 **1. Toolbar Control** bagian ini berisi ikon-ikon utama untuk mengendalikan proses pengambilan data.
 - Sirip Hiu (Biru): Berfungsi untuk memulai (Start) proses penangkapan paket data pada interface yang dipilih.
