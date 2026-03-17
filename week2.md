@@ -62,4 +62,6 @@ Proses ini melihat bagaimana proses autentikasi HTTP terjadi antara browser dan 
 4. Menggunakan filter "http" untuk menampilkan paket HTTP
 5. Stop capture
 
-sek pusing
+<img width="1365" height="767" alt="get last" src="https://github.com/user-attachments/assets/05df837e-eab1-4dde-8235-dde254e2172d" />
+
+Pada percobaan ini, ketika  pertama kali mengakses halaman protected, server merespon dengan HTTP 401 Unauthorized. Hal ini menunjukkan bahwa resource yang diminta membutuhkan autentikasi. Setelah itu, browser menampilkan form login kepada pengguna. Ketika username dan password dimasukkan, browser akan mengirim ulang request HTTP yang berisi header Authorization.
