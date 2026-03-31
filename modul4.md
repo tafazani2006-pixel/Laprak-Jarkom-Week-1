@@ -50,5 +50,14 @@ IPConfig adalah perintah pada Command Prompt yang digunakan untuk melihat dan me
 
 **Langkah-langkah Praktikum**
 1. Buka command prompt (CMD)
-2. Ketikan perintah *ipconfig /all*. Berfungsi untuk menampilka informasi jaringan seperti IP address, subnet mask, defaul gateway, DNS server, MAC address
-  <img width="724" height="749" alt="Screenshot 2026-03-30 160412" src="https://github.com/user-attachments/assets/4f91257b-39d0-4928-b416-271c2a8ef286" />
+2. Ketikan perintah *ipconfig /all*. Berfungsi untuk menampilkan informasi jaringan seperti IP address, subnet mask, defaul gateway, DNS server, MAC address
+
+   <img width="724" height="749" alt="Screenshot 2026-03-30 160412" src="https://github.com/user-attachments/assets/4f91257b-39d0-4928-b416-271c2a8ef286" />
+   
+3. Ketikan perintah *ipconfig /displaydns*. Berfungsi untuk menampikan daftar domain yang pernah diakses
+
+   <img width="730" height="604" alt="Screenshot 2026-03-30 160813" src="https://github.com/user-attachments/assets/df5d7fde-5141-45f0-83fb-0f64e40ee5c7" />
+
+4. Ketikan perintah *ipconfig /flushdns*. Berfungsi untuk menghapus cache DNS sehingga sistem akan melakukan pencarian ulang DNS saat mengakses domain
+
+   <img width="422" height="150" alt="Screenshot 2026-03-30 160822" src="https://github.com/user-attachments/assets/f0a8f025-d831-4f29-868f-75b052fa5ece" />
