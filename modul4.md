@@ -24,15 +24,19 @@ Nslookup adalah tools yang digunakan untuk mencari informasi DNS (Domain Name Sy
 - Perintah : nslookup www.nus.edu.sg
 - Domain : www.nus.edu.sg
 - Alamat IP : 45.60.35.225
+
   <img width="383" height="163" alt="image" src="https://github.com/user-attachments/assets/8065e7bb-5180-4043-84c0-03349ec1e82f" />
 
 2. Mencari DNS otoritatif universitas di Eropa
 - Perintah : nslookup -type=NS ox.ac.uk
 - DNS server : dns0.ox.ac.uk, dns1.ox.ac.uk, dns2.ox.ac.uk, auth4.dns.ox.ac.uk,          auth5.dns.ox.ac.uk, auth6.dns.ox.ac.uk
+
   <img width="441" height="296" alt="image" src="https://github.com/user-attachments/assets/970edfc3-ef1d-4126-8d6b-6d00b9169bf5" />
 
 3. Mencari mail server Yahoo melalui DNS tertentu
 - Perintah : nslookup -type=MX yahoo.com dns0.ox.ac.uk
 - Hasil : *** auth0.dns.ox.ac.uk can't find yahoo.com: Query refused
+
   <img width="549" height="103" alt="image" src="https://github.com/user-attachments/assets/f8d5a604-c9b1-46f7-99f0-834ef1f931c0" />
+  
 - Permintaan tidak berhasil karena server DNS dns0.ox.ac.uk merupakan authoritative      DNS yang hanya melayani domain ox.ac.uk, sehingga menolak permintaan untuk domain      lain seperti yahoo.com
