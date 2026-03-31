@@ -61,3 +61,25 @@ IPConfig adalah perintah pada Command Prompt yang digunakan untuk melihat dan me
 4. Ketikan perintah *ipconfig /flushdns*. Berfungsi untuk menghapus cache DNS sehingga sistem akan melakukan pencarian ulang DNS saat mengakses domain
 
    <img width="422" height="150" alt="Screenshot 2026-03-30 160822" src="https://github.com/user-attachments/assets/f0a8f025-d831-4f29-868f-75b052fa5ece" />
+
+## Tracing DNS dengan Wireshark
+## A. Analisis Paket DNS Menggunakan Wireshark**
+**Langkah-langkah Praktikum**
+1. Buka command prompt (CMD) dan ketikan perontah *ipconfig* untuk menyalin IP Address (10.218.0.23)
+2. Buka wireshark dan pilih jaringan yang aktif (wifi)
+3. Gunakan filter *ip.addr == 10.218.0.23*
+4. Aktifkan tombol start
+5. Buka browser *http://www.ietf.org/*
+6. Tambahkan filter lagi *ip.addr == 10.218.0.23 && dns.qry.name.contains "ietf"*
+   <img width="1365" height="747" alt="Screenshot 2026-03-30 161900" src="https://github.com/user-attachments/assets/b2235b53-7652-41c8-b21c-38f1f69a71fe" />
+
+**Pertanyaan**
+1. Apakah DNS menggunakan UDP atau TCP?
+
+   <img width="635" height="60" alt="image" src="https://github.com/user-attachments/assets/40e3a45e-832a-42b3-8fdd-a42e6260e3fb" />
+   Dns menggunakan UDP
+2. Port tujuan pada DNS request & port sumber pada DNS response
+
+   <img width="635" height="94" alt="image" src="https://github.com/user-attachments/assets/b7e1e406-c0be-4514-a7eb-ef6329e8eb21" />
+   DNS RESPONSE -> Source Port (client): 58200 & Destination Port (server): 53
+   DNS REQUEST -> Source Port (server): 53 & Destination Port (client): 58200
