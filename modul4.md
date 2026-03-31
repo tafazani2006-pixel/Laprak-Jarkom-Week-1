@@ -9,14 +9,17 @@ Nslookup adalah tools yang digunakan untuk mencari informasi DNS (Domain Name Sy
 
    a. nslookup www.mit.edu
       untuk menampilkan alamat IP dari domain serta server DNS default
-      <img width="433" height="321" alt="Screenshot 2026-03-30 155145" src="https://github.com/user-attachments/assets/c84fef42-714b-42c8-aba1-ebdaf176bf8a" />
+
+     <img width="433" height="321" alt="Screenshot 2026-03-30 155145" src="https://github.com/user-attachments/assets/c84fef42-714b-42c8-aba1-ebdaf176bf8a" />
 
    b. nslookup -type=NS mit.edu
       untuk menampilkan nama-nama DNS server dari domain mit.edu. tanpa *-tpe=NS, maka       yang tampil hanyalah informasi default
+
       <img width="596" height="526" alt="Screenshot 2026-03-30 155316" src="https://github.com/user-attachments/assets/81ad06fd-4ea0-43ea-b77f-56a38bdcbcd2" />
     
    c. nslookup www.aiit.or.kr bitsy.mit.edu
       untuk mengirim query ke DNS server tertentu (bukan default)
+
       <img width="553" height="294" alt="Screenshot 2026-03-30 155756" src="https://github.com/user-attachments/assets/aa214bf8-26e8-42bc-bda3-d0b556539351" />
 
 **Pertanyaan**
