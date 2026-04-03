@@ -1,6 +1,7 @@
 ## Talitha Fairuzzahwa Nirwasita - 103072400035 - IF0405
 # MODUL 5 : UDP
 ## UDP
+UDP (User Datagram Protocol) adalah salah satu protokol pada layer transport dalam model TCP/IP yang digunakan untuk mengirimkan data tanpa koneksi (connectionless). Artinya, UDP tidak melakukan proses pembentukan koneksi terlebih dahulu sebelum mengirim data.
 
 **Langkah-langkah**
 1. Download file http://gaia.cs.umass.edu/wireshark-labs/wireshark-traces.zip
@@ -33,21 +34,24 @@
 4. Jumlah maksimum byte UDP
    - Header UDP = 8 byte
    - Max ukuran IP = 65535 byte
-   65535 - 20 (IP header) - 8 (UDP header) = 65507 byte. Maka maksimum payload UDP adalah 65507 byte
+   - 65535 - 20 (IP header) - 8 (UDP header) = 65507 byte. Maka maksimum payload UDP adalah 65507 byte
 
 5. Port terbesar
+   Nomor port terbesar yang dapat digunakan adalah 65535. Hal ini karena field port pada UDP memiliki ukuran 16 bit, sehingga nilai maksimumnya adalah 2^16 - 1 yaitu 65535.
 
-6. Nomor protokol UDP
+7. Nomor protokol UDP
 
    <img width="632" height="272" alt="image" src="https://github.com/user-attachments/assets/acb2bc5b-bbc0-48fb-908a-7f33c7733d9d" />
 
    Nomor protokol UDP adalah 17 (desimal) atau 0x11 (heksadesimal)
 
-7. Hubungan port
+8. Hubungan port
 
    <img width="466" height="195" alt="image" src="https://github.com/user-attachments/assets/a9eca4c0-a63e-4cf9-9b63-617f358f68c7" /> <img width="500" height="197" alt="image" src="https://github.com/user-attachments/assets/2e1640de-c4f8-4329-8656-51831dbac695" />
 
-   
+   - REQUEST -> Source Port : 4334 & Destination Port : 161
+   - RESPONSE -> Source Port : 161 & Destination Port : 4334
+   - Nomor port pada paket balasan merupakan kebalikan dari paket permintaan, di mana port sumber dan tujuan saling bertukar
 
    
 
