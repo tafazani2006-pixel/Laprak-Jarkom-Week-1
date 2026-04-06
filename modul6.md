@@ -48,5 +48,78 @@ TCP (Transmission Control Protocol) adalah protokol pada layer transport yang be
 
    <img width="417" height="72" alt="image" src="https://github.com/user-attachments/assets/3070d184-fb3e-47a7-ba0a-217e23b8425b" />
    <img width="281" height="145" alt="image" src="https://github.com/user-attachments/assets/c066c114-af87-4706-8266-d9a832c981d4" />
+2. SYN-ACK, mencari data di filter tcp.flags.syn == 1 && tcp.flags.ack == 1
+
+   <img width="466" height="111" alt="image" src="https://github.com/user-attachments/assets/87731924-bd56-42b4-8176-3fd94259cea4" />
+
+   Nomor urut (sequence number) pada segmen SYN-ACK adalah 0, sedangkan nilai acknowledgment adalah 1. Nilai acknowledgment diperoleh dari sequence number pada segmen SYN sebelumnya yang ditambah 1. Segmen ini dapat diidentifikasi sebagai SYN-ACK karena memiliki flag SYN dan ACK pada bagian TCP Flags
+
+   <img width="437" height="262" alt="image" src="https://github.com/user-attachments/assets/70e38951-dee3-4877-857a-292205f14f58" />
+3. Sequence number POST, mencari data di filter tcp.port == 1161 && tcp contains "POST"
+
+   <img width="412" height="98" alt="image" src="https://github.com/user-attachments/assets/f9aaec1f-2dc1-4ed3-b7a9-c69a18137181" />
+
+   Nomor urut segmen TCP yang berisi perintah HTTP POST adalah 1
+
+   <img width="742" height="144" alt="image" src="https://github.com/user-attachments/assets/296a8234-bdda-41a9-8772-88c9cc261e12" />
+4. 6 segmen pertama + RTT
+
+   <img width="729" height="613" alt="image" src="https://github.com/user-attachments/assets/dd119ca3-81dc-4680-ae30-1c7d1fd1c091" />
+
+   Nilai RTT diperoleh dari selisih waktu antara pengiriman segmen TCP dan penerimaan acknowledgment. Berdasarkan grafik Round Trip Time, nilai RTT berkisar antara sekitar 100 ms hingga 300 ms. Nilai RTT ini bervariasi karena dipengaruhi oleh kondisi jaringan selama proses transfer
+   
+5. Panjang 6 segmen
+   
+   <img width="966" height="344" alt="image" src="https://github.com/user-attachments/assets/6358d958-2ea5-4d39-b8f7-95fdd51284a8" />
+
+   Panjang 6 segmen adalah 7.865 byte
+
+6. Buffer receiver
+
+   <img width="551" height="67" alt="image" src="https://github.com/user-attachments/assets/26f55ccb-174a-45f7-aa2c-eda08042211a" />
+
+   Nilai minimum ruang buffer yang tersedia pada penerima adalah 5840 byte, yang terlihat dari nilai window size pada segmen TCP
+
+7. Retransmission
+
+   <img width="815" height="332" alt="image" src="https://github.com/user-attachments/assets/2e8c7a63-d245-4cef-b3c6-24ca6e90f777" />
+   
+   Tidak ditemukan retransmission / ditemukan retransmission (pilih sesuai data). Hal ini dapat dilihat dari tidak adanya / adanya label “TCP Retransmission” pada Wireshark.
+
+8. ACK behavior
+
+   <img width="639" height="426" alt="image" src="https://github.com/user-attachments/assets/64aff0eb-426c-4665-a5f1-73c29eb78ad3" />
+
+   Jumlah data yang di-ACK tidak tetap dan bisa banyak. Penerima dapat mengakui beberapa segmen sekaligus, tidak selalu satu per satu
+
+9. Thoroughtput
+
+    <img width="566" height="607" alt="image" src="https://github.com/user-attachments/assets/ff18da6e-68ce-499b-8975-fbe42b20bce0" />
+
+   Throughput adalah jumlah data yang ditransfer per satuan waktu. Berdasarkan grafik throughput, kecepatan transfer meningkat secara bertahap hingga mencapai sekitar 200 kbps hingga 270 kbps. Nilai ini menunjukkan performa koneksi TCP selama proses pengiriman data
+
+## Congestion Control pada TCP 
+**Peertanyaan dan Langkah-langkah**
+1. Identifikasi Slow Start & Congestion Avoidance (file tcp-ethereal-trace-1)
+- Buka file tcp-ethereal-trace-1 dengan wireshark
+- Filter "TCP"
+- Klik Statistics -> TCP Stream Graph -> Time-Sequence Graph (Stevens)
+
+<img width="790" height="613" alt="Screenshot 2026-04-06 195336" src="https://github.com/user-attachments/assets/73b3db39-9b63-40ff-acb6-ae104ec3b689" />
+
+Fase slow start terjadi pada awal koneksi (0 – ±1 detik) dengan pertumbuhan eksponensial. Fase ini berakhir ketika mencapai threshold, ditandai perubahan grafik menjadi linear. Selanjutnya TCP masuk ke fase congestion avoidance dengan pertumbuhan linear. Data nyata menunjukkan sedikit deviasi dari teori karena kondisi jaringan seperti delay dan variasi ACK. Koneksi TCP pada grafik dapat dikatakan relatif stabil karena tidak menunjukkan penurunan drastis pada sequence number yang mengindikasikan packet loss besar atau timeout. Namun, grafik tidak sepenuhnya halus seperti pada model TCP ideal.
+
+2. Identifikasi Slow Start & Congestion Avoidance (alice.txt)
+- Start wireshark
+- Uploud file alice.txt ke http://gaia.cs.umass.edu/wireshark-labs/TCP-wireshark-file1.html
+- Kembali ke wireshark dan filter "TCP"
+- Klik Statistics -> TCP Stream Graph -> Time-Sequence Graph (Stevens)
+
+<img width="538" height="611" alt="image" src="https://github.com/user-attachments/assets/b2297158-03d7-4b08-9db7-febb121a8db1" />
+
+Pada grafik kedua, fase slow start terjadi pada awal koneksi dengan pertumbuhan eksponensial yang sangat cepat. Transisi ke congestion avoidance terjadi lebih cepat dibandingkan grafik sebelumnya. Hal ini menunjukkan bahwa koneksi Wi-Fi memiliki respon yang lebih cepat, namun juga lebih rentan terhadap variasi delay. Secara umum, koneksi tetap stabil, meskipun tidak sepenuhnya mengikuti perilaku ideal TCP akibat kondisi jaringan nirkabel.
+
+
+   
 
 
