@@ -84,7 +84,7 @@ TCP (Transmission Control Protocol) adalah protokol pada layer transport yang be
 
    <img width="815" height="332" alt="image" src="https://github.com/user-attachments/assets/2e8c7a63-d245-4cef-b3c6-24ca6e90f777" />
    
-   Tidak ditemukan retransmission / ditemukan retransmission (pilih sesuai data). Hal ini dapat dilihat dari tidak adanya / adanya label “TCP Retransmission” pada Wireshark.
+   Tidak ditemukan retransmission / ditemukan retransmission. Hal ini dapat dilihat dari tidak adanya / adanya label “TCP Retransmission” pada Wireshark.
 
 8. ACK behavior
 
