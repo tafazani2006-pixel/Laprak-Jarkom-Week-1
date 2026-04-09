@@ -142,7 +142,7 @@ IPConfig adalah perintah pada Command Prompt yang digunakan untuk melihat dan me
    Tipe DNS request adalah NS. Pesan ini tidak mengandung jawaban karena hanya berupa permintaan
 3. Answers response
 
-   <img width="1599" height="899" alt="image" src="https://github.com/user-attachments/assets/5577c86f-a94e-4d01-9ab6-e8e75e8f4a1b" />
+   ![WhatsApp Image 2026-04-09 at 20 53 28](https://github.com/user-attachments/assets/b23cd667-bb38-4361-98eb-e88fa9418e4a)
 
    Pada DNS response, diperoleh beberapa nama server MIT. Pesan balasan ini umumnya hanya menampilkan nama server (NS record), dan tidak alamat IP secara langsung pada bagian answers. Alamat IP muncul di bagian tambahan (Additional record)
 
