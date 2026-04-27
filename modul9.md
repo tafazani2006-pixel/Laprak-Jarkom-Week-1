@@ -1,5 +1,5 @@
-## Talitha Fairuzzahwa Nirwasita - 1030722400035 - IF0405
-# Modul 9 : Web Server
+## Talitha Fairuzzahwa Nirwasita - 103072400035 - IF0405
+# MODUL 9 : Web Server
 ## Web Server
 Web server merupakan komponen penting dalam sistem komunikasi berbasis internet. Web server berfungsi untuk menerima permintaan (request) dari klien, seperti browser, kemudian mengirimkan respons berupa halaman web atau data yang diminta. Proses komunikasi ini umumnya menggunakan protokol HTTP (HyperText Transfer Protocol) yang berjalan di atas TCP (Transmission Control Protocol).
 
