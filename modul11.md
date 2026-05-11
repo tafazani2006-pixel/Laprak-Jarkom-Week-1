@@ -1,16 +1,16 @@
 ## Talitha Fairuzzahwa Nirwasita - 103072400035 - IF0405
-# MODUL 11 : DCHP
-## DCHP
+# MODUL 11 : DHCP
+## DHCP
 Dynamic Host Configuration Protocol (DHCP) adalah protokol jaringan yang digunakan untuk memberikan konfigurasi jaringan secara otomatis kepada perangkat yang terhubung ke jaringan. Konfigurasi tersebut meliputi IP Address, subnet mask, gateway, dan DNS server sehingga pengguna tidak perlu mengatur IP secara manual.
 
-## Kelebihan DCHP
+## Kelebihan DHCP
 1. Proses pemberian IP address menjadi otomatis dan lebih cepat
 2. Memudahkan administrator jaringan dalam mengelola alamat IP
 3. Menghindari terjadinya konflik penggunaan IP address yang sama
 4. Mengurangi risiko kesalahan konfigurasi IP address yang tidak valid
 5. Efisien digunakan pada jaringan dengan banyak perangkat
 
-## Kekurangan DCHP
+## Kekurangan DHCP
 1. Perangkat lebih sulit untuk dilacak karena IP address dapat berubah secara otomatis
 2. Membutuhkan konfigurasi tambahan pada server DHCP
 3. Jika server DHCP mengalami gangguan, perangkat klien tidak dapat memperoleh IP address
