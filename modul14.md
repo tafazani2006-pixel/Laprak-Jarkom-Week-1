@@ -20,8 +20,11 @@ Untuk menganalis lebih lanjut praktikum disiapkan dengan mengunduh dan ekstrak b
 Fungsi Utama: Access Point melakukan proses broadcast (penyiaran) Beacon Frame secara terus-menerus dengan tujuan utama untuk mengumumkan keberadaannya (advertising) kepada semua perangkat/klien di sekitarnya, sehingga klien mengetahui parameter jaringan dan SSID yang tersedia untuk disambungkan
 
 Untuk memfilter Beacon Frame, digunakan perintah ekspresi filter pada Wireshark: wlan.fc.subtype == 8 && wlan.fc.type == 0
+
 <img width="975" height="358" alt="image" src="https://github.com/user-attachments/assets/136e1920-bb28-48dd-8e07-9ffc91af1de9" />
+
 Berdasarkan hasil tangkapan layar Wireshark, Beacon Frame dikirimkan secara periodik setiap sekitar 8 milidetik. Tercatat bahwa aktivitas beaconing ini berlangsung selama 73 detik dengan total pengiriman sebanyak 2363 kali.
+
 <img width="711" height="703" alt="image" src="https://github.com/user-attachments/assets/04919c50-a616-468f-a7fd-74aa1b9d635e" />
 
 Berdasarkan ekspansi detail paket pada Frame 3, ditemukan parameter-parameter berikut:  
@@ -37,6 +40,7 @@ Analisis Tagged Parameters
 
 ## Analisis Data Transfer
 Untuk menganalisis perpindahan data, diterapkan filter alamat IP server: Untuk menganalisis perpindahan data, diterapkan filter alamat IP server:
+
 <img width="816" height="416" alt="image" src="https://github.com/user-attachments/assets/6d1fe970-aad5-4ddd-a180-3864859ee4d1" />
 
 Hasil menunjukkan proses Three-Way Handshake TCP (SYN $\rightarrow$ SYN-ACK $\rightarrow$ ACK) diikuti oleh paket HTTP GET pada Frame 480 untuk mengunduh dokumen teks /wireshark-labs/alice.txt.  
@@ -49,14 +53,19 @@ Analisis Protokol: Paket data dibungkus menggunakan protokol kendali tautan logi
 
 Diterapkan ekspresi filter untuk melihat manajemen jabat tangan nirkabel:wlan.fc.type_subtype == 0
 - expand paket awal
+
   <img width="749" height="587" alt="image" src="https://github.com/user-attachments/assets/f8965de7-319b-40c3-b49f-704b740fee69" />
+
 - expand paket akhir
+
   <img width="975" height="948" alt="image" src="https://github.com/user-attachments/assets/0b7f2078-63ee-4de1-adce-ac8e8c87cbb7" />
+
 Jika kita membandingkan paket permintaan asosiasi teratas (Frame 1750) dengan paket asosiasi terbawah (Frame 2162), terjadi perubahan pada bagian parameter SSID:
 - Pada Frame 1750, klien mencoba berasosiasi ke AP dengan SSID "linksys_SES_24086".
 - Pada Frame 2162 (paling bawah), klien berpindah dan mengirim permintaan asosiasi baru ke AP dengan SSID "30 Munroe St".
 
 Tanggapan Asosiasi (Association Response) dianalisis melalui filter subtype respon: wlan.fc.type_subtype == 1
+
 <img width="687" height="376" alt="image" src="https://github.com/user-attachments/assets/8c5e9666-6383-4110-a216-7b922f8d5ed8" />
 
 Ditemukan Frame 2166 yang merupakan Association Response. Di sini, Transmitter Address diisi oleh MAC Address milik perangkat pengirim respon, yaitu CiscoLinksys_f7:1d:51 , sebagai tanda bahwa Access Point menyetujui permintaan koneksi dari klien (Intel_d1:6b:4f).
